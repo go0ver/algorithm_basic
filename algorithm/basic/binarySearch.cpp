@@ -16,6 +16,7 @@ void binary_search(int a[], int k, int n){
             //边界条件：当l和r距离差1的时候，可能会出现指针不更新的情况，使l永远小于r，死循环
             l = mid + 1;
         } else {
+            //r的值是l+r >> 1向下取整，r和l相差1的时候能保证r的值更新
             r = mid;
         }
     }
@@ -31,6 +32,7 @@ void binary_search(int a[], int k, int n){
                 r = mid - 1;
             }
             else{
+                //l的值会更新成 l + r >> 1向上取整，r和l相差1的时候能保证l的值更新
                 l = mid;
             }
         }
